@@ -9,9 +9,9 @@ const instructor = (state = initialState, action) => {
     case FETCH_INSTRUCTOR:
       return action.payload;
     case EDIT_INSTRUCTOR:
-      return state.map(course => { 
+      return state.map(instructor => { 
         return (
-          course.id===action.payload.id ? action.payload : course
+          instructor.id===action.payload.id ? action.payload : instructor
         );
       });
     default:
