@@ -1,5 +1,5 @@
 import * as ac from './actions/actionCreators';
-import instructor from './reducers/instructor';
+//import instructor from './reducers/instructor';
 const axios = require('axios');
 
 //PATH (should be where your server is running)
