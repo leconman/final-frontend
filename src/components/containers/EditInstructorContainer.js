@@ -3,17 +3,17 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import EditInstructorView from '../views/EditInstructorView';
-import { editInstructorThunk } from '../../store/thunks';
+import { editInstructorThunk, 
+  editCourseThunk, 
+  addCourseThunk,
+  deleteCourseThunk, 
+  fetchAllCoursesThunk } from '../../store/thunks';
 
 
 class EditInstructorContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          firstname: this.props.firstname, 
-          lastname: this.props.lastname,
-          department: this.props.department, 
-          imageUrl: this.props.imageUrl,
           redirect: false, 
           id: this.props.match.params.id
         };
@@ -27,14 +27,14 @@ class EditInstructorContainer extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-
         let instructor = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            department: this.state.department,
-            imageUrl: this.state.imageUrl,
-            id:  this.state.id
-        };
+          firstname: this.state.firstname,
+          lasntame: this.state.lastname,
+          department: this.state.department,
+          imageUrl: this.state.imageUrl, 
+          id: this.state.id
+        }
+
         
         await this.props.editInstructor(instructor);
 
@@ -43,6 +43,7 @@ class EditInstructorContainer extends Component {
           lastname: this.state.lastname,
           department: this.state.department,
           imageUrl: this.state.imageUrl, 
+          //courses:  this.state.courses,
           redirect: true, 
           id: this.state.id
         });
@@ -57,6 +58,7 @@ class EditInstructorContainer extends Component {
         if(this.state.redirect) {
           return (<Redirect to={`/instructor/${this.state.id}`}/>)
         }
+        //console.log(this.state.firstname);
         return (
           <EditInstructorView 
             handleChange = {this.handleChange} 
@@ -69,6 +71,11 @@ class EditInstructorContainer extends Component {
 const mapDispatch = (dispatch) => {
     return({
         editInstructor: (instructor) => dispatch(editInstructorThunk(instructor)),
+        addCourse: (course) => dispatch(addCourseThunk(course)),
+        editCourse: (course) => dispatch(editCourseThunk(course)),
+        deleteCourse: (courseId) => dispatch(deleteCourseThunk(courseId)),
+        fetchAllCourses: () => dispatch(fetchAllCoursesThunk())
+
     })
 }
 

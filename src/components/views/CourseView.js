@@ -5,7 +5,7 @@ const CourseView = (props) => {
   return (
     <div>
       <h1>{course.title}</h1>
-      <h3>{course.instructor.firstname + " " + course.instructor.lastname}</h3>
+      <h3>{course.instructorId ? course.instructor.firstname + " " + course.instructor.lastname: "staff"}</h3>
       <Link to={`/editcourse/${course.id}`}>
         <button>Edit Course</button>
       </Link>
