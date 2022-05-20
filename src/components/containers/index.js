@@ -6,4 +6,5 @@ export { default as AllCoursesContainer } from "./AllCoursesContainer";
 export { default as CourseContainer } from "./CourseContainer";
 export { default as NewCourseContainer } from "./NewCourseContainer";
 export { default as EditCourseContainer } from "./EditCourseContainer";
+export { default as EditInstructorContainer } from "./EditInstructorContainer";
 export { default as NewInstructorContainer } from "./NewInstructorContainer";

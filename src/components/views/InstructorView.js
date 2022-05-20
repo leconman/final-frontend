@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const InstructorView = (props) => {
   const {instructor} = props;
@@ -13,6 +13,9 @@ const InstructorView = (props) => {
         );
       })}
       </ul>
+      <Link to={`/editinstructor/${instructor.id}`}>
+        <button>Edit Instructor</button>
+      </Link>
     </div>
   );
 
