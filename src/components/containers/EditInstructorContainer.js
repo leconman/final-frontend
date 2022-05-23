@@ -3,11 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import EditInstructorView from '../views/EditInstructorView';
-import { editInstructorThunk, 
-  editCourseThunk, 
-  addCourseThunk,
-  deleteCourseThunk, 
-  fetchAllCoursesThunk } from '../../store/thunks';
+import { editInstructorThunk } from '../../store/thunks';
 
 
 class EditInstructorContainer extends Component {
@@ -29,7 +25,7 @@ class EditInstructorContainer extends Component {
         event.preventDefault();
         let instructor = {
           firstname: this.state.firstname,
-          lasntame: this.state.lastname,
+          lastname: this.state.lastname,
           department: this.state.department,
           imageUrl: this.state.imageUrl, 
           id: this.state.id
@@ -71,10 +67,6 @@ class EditInstructorContainer extends Component {
 const mapDispatch = (dispatch) => {
     return({
         editInstructor: (instructor) => dispatch(editInstructorThunk(instructor)),
-        addCourse: (course) => dispatch(addCourseThunk(course)),
-        editCourse: (course) => dispatch(editCourseThunk(course)),
-        deleteCourse: (courseId) => dispatch(deleteCourseThunk(courseId)),
-        fetchAllCourses: () => dispatch(fetchAllCoursesThunk())
 
     })
 }
