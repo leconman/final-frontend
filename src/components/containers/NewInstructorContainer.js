@@ -10,8 +10,8 @@ class NewInstructorContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          firstname: "", 
-          lastname: "",
+          firstname: "New", 
+          lastname: "Instructor",
           department: "", 
           redirect: false, 
           redirectId: null

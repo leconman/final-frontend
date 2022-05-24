@@ -10,7 +10,7 @@ class NewCourseContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          title: "", 
+          title: "New Course", 
           timeslot: "",
           location: "", 
           instructorId: null, 
