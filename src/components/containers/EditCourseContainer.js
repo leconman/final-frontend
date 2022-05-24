@@ -8,11 +8,7 @@ import { editCourseThunk} from '../../store/thunks';
 class EditCourseContainer extends Component {
     constructor(props){
         super(props);
-        this.state = {
-          title: this.props.title, 
-          timeslot: this.props.timeslot,
-          //location: this.props.location, 
-          instructorId: this.props.instructorId, 
+        this.state = { 
           redirect: false, 
           id: this.props.match.params.id
         };
@@ -31,7 +27,6 @@ class EditCourseContainer extends Component {
             title: this.state.title,
             timeslot: this.state.timeslot,
             location: this.state.location,
-            instructorId: this.state.instructorId,
             id: this.state.id
         };
         
@@ -41,8 +36,7 @@ class EditCourseContainer extends Component {
         this.setState({
           title: this.state.title,
           timeslot: this.state.timeslot,
-          location: this.state.location,
-          instructorId: null, 
+          location: this.state.location, 
           redirect: true, 
           id: this.state.id
         });

@@ -39,7 +39,6 @@ class EditInstructorContainer extends Component {
           lastname: this.state.lastname,
           department: this.state.department,
           imageUrl: this.state.imageUrl, 
-          //courses:  this.state.courses,
           redirect: true, 
           id: this.state.id
         });

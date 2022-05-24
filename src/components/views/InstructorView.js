@@ -9,6 +9,8 @@ const InstructorView = (props) => {
   return (
     <div>      
       <h1>{instructor.firstname}</h1>
+      {instructor.imageUrl ? 
+      <img src={instructor.imageUrl}alt="instructor" width="125" height="125"/>:""}
       <h3>{instructor.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
         <div>Assigned courses:
